@@ -1,14 +1,16 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
+import { NEXT_PUBLIC_BASE_URL,NEXT_PUBLIC_GATEWAY_URL} from './config';
+
 
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Begin"
+      label: "Read the tales of VERA",
     }
   ],
-  image: `${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmcQVMUmP3jxXwEG3uzMUGAXgp9dSn27fdn47dxypE1Wjg/?0.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+  image: `${NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmcQVMUmP3jxXwEG3uzMUGAXgp9dSn27fdn47dxypE1Wjg/0.png`,
+  post_url: `${NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
 });
 
 export const metadata: Metadata = {
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'VERA Rebellion',
     description: 'A frame telling the story of the VERA rebellion',
-    images: [`${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmcQVMUmP3jxXwEG3uzMUGAXgp9dSn27fdn47dxypE1Wjg/?0.png`],
+    images: [`${NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmcQVMUmP3jxXwEG3uzMUGAXgp9dSn27fdn47dxypE1Wjg/0.png`],
   },
   other: {
     ...frameMetadata,

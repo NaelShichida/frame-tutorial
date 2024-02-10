@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { NEXT_PUBLIC_BASE_URL,NEXT_PUBLIC_GATEWAY_URL} from '../../config';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   const searchParams = req.nextUrl.searchParams
@@ -11,22 +12,22 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame 5</title>
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmPvwSFuyduxhV7mKT8TGTiEoryMFTnUdB3eA2b5Go2pZa/5.png" />
+    <meta property="fc:frame:image" content="${NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmPvwSFuyduxhV7mKT8TGTiEoryMFTnUdB3eA2b5Go2pZa/5.png" />
     <meta property="fc:frame:button:1" content="Cosmic Cowboys" />
     <meta property="fc:frame:button:1:action" content="post_redirect" />
     <meta property="fc:frame:button:2" content="Blog post Tutorial" />
     <meta property="fc:frame:button:2:action" content="post_redirect" />
     <meta property="fc:frame:button:3" content="Video Tutorial" />
     <meta property="fc:frame:button:3:action" content="post_redirect" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
+    <meta property="fc:frame:post_url" content="${NEXT_PUBLIC_BASE_URL}/api/end" />
   </head></html>`);
   } else {
   return new NextResponse(`<!DOCTYPE html><html><head>
     <title>This is frame ${id}</title>
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="${process.env.NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmPvwSFuyduxhV7mKT8TGTiEoryMFTnUdB3eA2b5Go2pZa/${id}.png" />
+    <meta property="fc:frame:image" content="${NEXT_PUBLIC_GATEWAY_URL}/ipfs/QmPvwSFuyduxhV7mKT8TGTiEoryMFTnUdB3eA2b5Go2pZa/${id}.png" />
     <meta property="fc:frame:button:1" content="Next Page" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
+    <meta property="fc:frame:post_url" content="${NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
   </head></html>`);
   }
 }

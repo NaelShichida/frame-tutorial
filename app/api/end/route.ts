@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { NEXT_PUBLIC_BASE_URL,NEXT_PUBLIC_GATEWAY_URL} from '../../config';
 
 export async function POST(req: NextRequest): Promise<Response> {
   const data = await req.json();
@@ -16,9 +17,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     path = "";
   }
   const headers = new Headers();
-  headers.set("Location", `${process.env.NEXT_PUBLIC_BASE_URL}/`);
+  headers.set("Location", `${NEXT_PUBLIC_BASE_URL}/`);
   const response = NextResponse.redirect(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/${path}`,
+    `${NEXT_PUBLIC_BASE_URL}/${path}`,
     {
       headers: headers,
       status: 302,
