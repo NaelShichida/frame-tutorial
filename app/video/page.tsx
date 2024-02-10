@@ -1,7 +1,7 @@
 export default function Page() {
     return (
       <>
-        <h1>Redirecting to VERA Rebellion</h1>
+        <h1>Redirecting to video page</h1>
       </>
     );
   }

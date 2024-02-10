@@ -1,7 +1,7 @@
 export default function Page() {
     return (
       <>
-        <h1>VERA Rebellion</h1>
+        <h1>Cosmic Cowboys</h1>
       </>
     );
   }
